@@ -69,6 +69,8 @@ def smokeTest(environment) {
 }
 
 def deployToEB(environment) {
+//improvement: pull directly from docker hub    
+
     checkout scm
     withCredentials([usernamePassword(credentialsId: 'aws-eb-key', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
             container('eb') {
