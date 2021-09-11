@@ -19,7 +19,7 @@ podTemplate(
       
     def image
     withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USER', passwordVariable: 'PASSWD')]) {
-        image = "${USER}/jrcms:${currentBuild.number}"
+        image = "${USER}/jrcmseva:${currentBuild.number}"
     }
     
     stage('Build and Test') {
